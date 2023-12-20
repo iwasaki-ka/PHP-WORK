@@ -8,11 +8,28 @@
 <body>
 
 <?php
-$message = '今日の日付：'.date('Y/m/d');
-define('TITLE','定数とは');
+define('TITLE','Hello PHP World!');
+$message = '演算子とは';
+$a = 3;
+$b = 2;
+
 ?>
-  <h1>Hello PHP World!</h1>
+  <h1><?= TITLE; ?></h1>
   <p><?= $message ?></p>
-  <p><?= TITLE; ?></p>
+  <p>
+    <?php
+    //echo $a + $b .'<br>';
+    //echo $a - $b .'<br>';
+    //echo $a * $b .'<br>';
+    //echo $a / $b .'<br>';
+    //echo $a % $b .'<br>';
+    //echo $a ** $b .'<br>';
+    $a = 'PHP ';
+    $b = 'World';
+    $a  .= $b;
+    echo $a;
+    ?>
+  </p>
+
 </body>
 </html>
