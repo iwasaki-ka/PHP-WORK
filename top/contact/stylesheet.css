@@ -1,0 +1,323 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #fff;
+  color: black;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+nav a:nth-child(1) {
+  background-color: #fc6c85;
+  color: #fff;
+  padding: 10px 55px;
+  border-radius: 0px;
+}
+
+nav a:nth-child(2) {
+  background-color: green;
+  color: #fff;
+  padding: 10px 55px;
+  border-radius: 0px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.menu-section {
+  text-align: center;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.menu-section li {
+  margin: 0 10%; 
+}
+
+
+.menu-section img{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-form-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form-section h1 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group label {
+  flex: 1;
+  display: block;
+  margin-bottom: 2%;
+  text-align: left;
+  max-width:20%;
+  font-weight: bold;
+}
+
+.form-group label::after {
+  content: " 必須";
+  color: #fff;
+  background-color: #fc6c85; 
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-left: 5px; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="inquiry"],
+.form-group input[type="message"],
+.form-group textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 3%;
+}
+
+
+select {
+  border: 1px solid #ccc; 
+  padding: 5px; 
+  
+}
+
+
+
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 2% 15%;
+  margin-bottom: 10%;
+  border: none;
+  
+}
+
+.submit{
+  text-align: center;
+}
+
+
+.section05{
+  max-width: 1200px;
+  background-color: #d3d3d3;
+  height: 300px;
+}
+
+.sec05_wrapper{
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link01{
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  padding: 40px;
+  width:40%;
+  height:50%;
+}
+
+.link01 h3{
+  font-size: 90%;
+  text-align: center;
+  margin:0 auto;
+}
+
+.btn01{
+  background-color: #fc6c85;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 0px;
+  margin:10px 90px;
+}
+.link02{
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  padding: 40px;
+  width:40%;
+  height:50%;
+}
+
+.link02 h3{
+  font-size: 90%;
+  text-align: center;
+  margin:0 auto;
+}
+
+.btn02{
+  background-color: green;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 0px;
+  margin:10px 90px;
+}
+
+.section06 h4{
+  text-align: center;
+  margin-top: 200px ;
+}
+.section06 p{
+  text-align: center;
+  margin: 10px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  border-top: 1px solid black;
+}
+
+.linklist{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.linklist  li {
+  margin: 5px; 
+  flex: 0 0 calc(100% / 7);
+  text-align: center;
+}
+
+
+footer p{
+  text-align: center;
+}
+
+@media screen and (max-width:768px){
+  .container {
+    width: 768px;
+  }
+
+  nav a:nth-child(1) {
+    background-color: #fc6c85;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 0px;
+  }
+  
+  nav a:nth-child(2) {
+    background-color: green;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 0px;
+  }
+
+  main {
+    max-width: 768px;
+    margin: 20px auto;
+  }
+
+ 
+
+  .section05{
+    max-width: 768px;
+    background-color: #d3d3d3;
+    height: 300px;
+  }
+
+  .btn01{
+    background-color: #fc6c85;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 0px;
+    margin:20px 25px;
+    font-size: 40%;
+  }
+
+  .btn02{
+    background-color: green;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 0px;
+    margin:20px 25px;
+    font-size: 40%;
+  }
+  .form-group label::after {
+    content: " 必須";
+    color: #fff;
+    background-color: #fc6c85; 
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    margin-left: 5px; 
+  }
+
+  .form-group label {
+    flex: 1;
+    display: block;
+    margin-bottom: 2%;
+    text-align: left;
+    max-width:20%;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+
+
+select {
+  border: 1px solid #ccc; 
+  padding: 5px; 
+  margin-left: 2%;
+
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+  margin-left: 2%;
+}
+}
