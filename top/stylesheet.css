@@ -174,15 +174,10 @@ main {
 .sec05_wrapper{
   height: 300px;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .link01{
   background-color: #fff;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
   margin:auto;
   padding: 40px;
   width:40%;
@@ -199,7 +194,8 @@ main {
   background-color: #fc6c85;
   text-align: center;
   color: #fff;
-  padding: 10px 55px;
+  padding: 10px;
+  margin:0px 100px;
   border-radius: 0px;
 }
 .link02{
@@ -218,12 +214,13 @@ main {
   margin:0 auto;
 }
 
-.btn02{
+.contact{
   background-color: green;
+  text-align: center;
   color: #fff;
-  padding: 10px 40px;
+  padding: 10px;
+  margin:0px 100px;
   border-radius: 0px;
-  margin:10px 90px;
 }
 
 .section06 h4{
@@ -327,17 +324,18 @@ footer p{
     background-color: #fc6c85;
     text-align: center;
     color: #fff;
-    padding: 10px 55px;
+    padding: 10px;
+    margin:0px 40px;
     border-radius: 0px;
   }
 
-  .btn02{
+  .contact{
     background-color: green;
+    text-align: center;
     color: #fff;
-    padding: 10px 50px;
+    padding: 10px;
+    margin:0px 40px;
     border-radius: 0px;
-    margin:20px 25px;
-    font-size: 40%;
   }
 
   .sec04_content{
@@ -350,21 +348,21 @@ footer p{
     max-width: 768px;
   }
 
-  menu a:nth-child(1) {
+  .menu a:nth-child(1) {
     background-color: #fc6c85;
     color: #fff;
     padding: 10px 35px;
     border-radius: 0px;
   }
   
-  menu a:nth-child(2) {
+  .menu a:nth-child(2) {
     background-color: green;
     color: #fff;
     padding: 10px 35px;
     border-radius: 0px;
   }
 
-  main {
+  .main {
     max-width: 100%;
     margin: 20px auto;
   }
@@ -412,17 +410,24 @@ footer p{
     background-color: #fc6c85;
     text-align: center;
     color: #fff;
-    padding: 10px 55px;
+    padding: 10px;
+    margin:0px 10px;
     border-radius: 0px;
   }
 
-  .btn02{
+  .contact{
     background-color: green;
+    text-align: center;
     color: #fff;
-    padding: 10px 50px;
+    padding: 10px;
+    margin:0px 2px;
     border-radius: 0px;
-    margin:20px 25px;
-    font-size: 40%;
+  }
+
+  .link02 h3{
+    font-size: 80%;
+    text-align: center;
+    margin:0 auto;
   }
 
   .sec04_content{
