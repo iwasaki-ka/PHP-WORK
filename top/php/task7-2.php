@@ -4,7 +4,7 @@ class Staff{
   private $age;
   private $sex;
   private $id;
-  private static $nextId = 1;
+  protected static $nextId = 1;
 
   public function __construct($name,$age,$sex){
     $this -> name = $name;
@@ -14,38 +14,46 @@ class Staff{
   }
 
   public function number(){
-    $staffid ='S'. sprintf('%03d',self::$nextId);
+    $staffid ='S'. sprintf('%04d',self::$nextId);
     self::$nextId++;
     return $staffid;
   }
 
 
   public function show() {
-    printf("%s %s %d歳 %s\n", $this->id, $this->name, $this->age, $this->sex);
+    printf("%s %s %d歳 %s\n<br>", $this->id, $this->name, $this->age, $this->sex);
 }
-  
+}
 
   class PartStaff extends Staff{
-    private static $nextId = 1;
-    private $jikyu;
-    private $partId;
+   private $name;
+   private $age;
+   private $sex;
+   private $jikyu;
+   private $id;
 
   
 
   public function __construct($name, $age, $sex, $jikyu) {
-    parent::__construct($name, $age, $sex);
+    $this -> name = $name;
+    $this -> age = $age;
+    $this -> sex = $sex;
     $this->jikyu = $jikyu;
     $this->partId = $this->number();
     $this->id = $this->partId;
   }
 
   public function number(){
-    $id ='P '. sprintf('%03d',self::$nextId) ;
-    return $id;
+    $partId ='P'. sprintf('%04d',parent::$nextId++) ;
+    return $partId;
   }
+
+  public function show() {
+    printf("%s %s %d歳 %s 時給：%s円\n<br>", $this->id, $this->name, $this->age, $this->sex,$this->jikyu);
+}
 }
 
-}
+
 
 
 $staff1 = new Staff("佐藤 一郎", 31, "男性");
@@ -56,7 +64,7 @@ $staff4 = new Staff("中村 三郎", 27, "男性");
 
 $staff1->show(); 
 $staff2->show(); 
- 
+$staff3->show(); 
 $partStaff1->show(); 
 $staff4->show();
 

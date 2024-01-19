@@ -23,14 +23,14 @@ class Staff{
   }
 
   public function number(){
-    $staffid ='S'. sprintf('%03d',self::$nextId);
+    $staffid ='S'. sprintf('%04d',self::$nextId);
     self::$nextId++;
     return $staffid;
   }
 
 
   public function show() {
-    printf("%s %s %d歳 %s\n", $this->id, $this->name, $this->age, $this->sex);
+    printf("%s %s %d歳 %s\n", $this->id, $this->name, $this->age, $this->sex."<br>");
 }
 
 }
