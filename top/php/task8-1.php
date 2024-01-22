@@ -1,4 +1,86 @@
+<?php
+ if ($_SERVER["REQUEST_METHOD"]=="POST"){
+  $name = $_POST["name"];
+  $furigana = $_POST["furigana"];
+  $email = $_POST["email"];
+  $tel = $_POST["tel"];
+  $inquiry = $_POST["inquiry"];
+  $message = $_POST["message"];
+  $privacyPolicy = $_POST["privacyPolicy"];
+
+ $errors =[];
+ if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
+  $errors[]="メールアドレスが正しくありません。";
+ }
+ if(!preg_match("/^\d{10,11}$/",$tel)){
+  $errors[]="電話番号は10桁または11桁で入力してください。";
+ }
+ if($inquiry=="選択してください"){
+  $errors[]="お問い合わせ項目を選択してください。";
+ }
+ if(empty($message)){
+  $errors[]="お問い合わせ内容が空白です。";
+ }
+ if(empty($name)){
+  $errors[]="名前が入力されていません。";
+ }
+ if(empty($furigana)){
+  $errors[]="フリガナが入力されていません。";
+ }
+ if(empty($privacyPolicy)){
+  $errors[]="個人情報保護方針にチェックが入っていません。";
+ }
+
+if(empty($errors)){
+  header("Location:C:\work\html\PHP-WORK\top\php\task8-2.php");
+  exit;
+}
+
+ }
+
+?>
+
 <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOPページ</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="C:\work\html\PHP-WORK\top\contact\stylesheet.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="logo">
+      <h1>ここには会社名が入ります</h1>
+    </div>
+    <nav class="menu">
+      <a href="#">ボタン01</a>
+      <a href="#">ボタン02</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="menu-section">
+      <ul>
+        <li><a href="#">メニュー01</a></li>
+        <li><a href="#">メニュー02</a></li>
+        <li><a href="#">メニュー03</a></li>
+      </ul>
+      <img src="mv.png" alt="Main Visual">
+    </section> 
+
+    <?php if(!empty($errors)):?>
+      <div class="error">
+       <?php foreach($errors as $error):?>
+       <p><?php echo $error;?></p>
+       <?php endforeach;?>
+      </div>
+    <?php endif;?>  
+
+    <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -31,7 +113,7 @@
 
     <section class="contact-form-section">
       <h1>お問い合わせ</h1>
-      <form action="" method="post">
+      <form action="C:\work\html\PHP-WORK\top\php\task8-1.php" method="post">
         <div class="form-group">
             <label for="name">お名前</label>
             <input type="text" id="name" name="name" required>
@@ -68,49 +150,8 @@
             
         </div>
         <div class="submit">
-        <button type="submit">確認</button>
+        <input type="submit" value="<?php echo empty($errors) ? '送信' : '確認'; ?>">
         </div>
     </form>
   </section>
-
-
-  <section class="section05">
-    <div class="sec05_wrapper">
-      <div class="link01">
-      <h3>こちらからご購入ください</h3>
-      <nav class="shop">
-      <a href="#">ネットショップ</a>
-      </nav>
-      </div>
-      <div class="link02">
-      <h3>お気軽にお問い合わせください。</h3>
-      <nav class="contact">
-      <a href="contact/index.html">お問い合わせ</a>
-      </nav>
-      </div>
-    </div>
-  </section>
-
-    <section class="section06">
-      <h4>ここには会社名が入ります</h4>
-      <p>住所が入ります</p>
-      <p>03-1234-5678</p>
-      <p>営業時間:9:00～18:00</p>
-    </section>
-  </main>
-
-  <footer>
-    <ul class="linklist">
-      <li><a href="#">リンク01</a></li>
-      <li><a href="#">リンク02</a></li>
-      <li><a href="#">リンク03</a></li>
-      <li><a href="#">リンク04</a></li>
-      <li><a href="#">リンク05</a></li>
-      <li><a href="#">リンク06</a><br><br><a  href="#">リンク07</a></li>
-    </ul>  
-    <p>ここには会社名が入ります&copy; Copylight</p>
-
-  </footer>
-  </div>
-</body>
-</html>
+    
