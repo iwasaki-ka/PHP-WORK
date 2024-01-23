@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOPページ</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="../contact/reset.css">
+  <link rel="stylesheet" href="../contact/stylesheet.css">
 </head>
 <body>
   <div class="container">
@@ -26,10 +26,32 @@
         <li><a href="#">メニュー02</a></li>
         <li><a href="#">メニュー03</a></li>
       </ul>
-      <img src="mv.png" alt="Main Visual">
+      <img src="../contact/mv.png" alt="Main Visual">
     </section> 
-    <p>送信完了しました。</p>
+
+    <section class="kanryou">
+     <p>送信完了しました。</p>
+    </section>
+
+    <section class="section05">
+    <div class="sec05_wrapper">
+      <div class="link01">
+      <h3>こちらからご購入ください</h3>
+      <nav class="shop">
+      <a href="#">ネットショップ</a>
+      </nav>
+      </div>
+      <div class="link02">
+      <h3>お気軽にお問い合わせください。</h3>
+      <nav class="contact">
+      <a href="../contact/index.html">お問い合わせ</a>
+      </nav>
+      </div>
+    </div>
+  </section>
   </main>
+
+  
 
   <footer>
     <ul class="linklist">
