@@ -1,63 +1,65 @@
-<?php
+<?php 
 session_start();
 
- if ($_SERVER["REQUEST_METHOD"]=="POST"){
+ if ($_SERVER["REQUEST_METHOD"]=="POST"){ 
   unset($_SESSION["form_data"]["confirm"]);
-  $name = $_POST["name"];
-  $furigana = $_POST["furigana"];
-  $email = $_POST["email"];
-  $tel = $_POST["tel"];
-  $inquiry = $_POST["inquiry"];
-  $message = $_POST["message"];
-  $privacyPolicy = $_POST["privacypolicy"];
+$_SESSION["form_data"]["name"] = $_POST["name"];
+$_SESSION["form_data"]["furigana"] = $_POST["furigana"];
+$_SESSION["form_data"]["email"] = $_POST["email"];
+$_SESSION["form_data"]["tel"] = $_POST["tel"];
+$_SESSION["form_data"]["inquiry"] = $_POST["inquiry"];
+$_SESSION["form_data"]["message"] = $_POST["message"];
+$_SESSION["form_data"]["privacypolicy"] = $_POST["privacypolicy"];
 
  $errors =[];
- if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
-  $errors[]="メールアドレスが正しくありません。";
- }
- if(!preg_match("/^\d{10,11}$/",$tel)){
-  $errors[]="電話番号は10桁または11桁で入力してください。";
- }
- if($inquiry=="選択してください"){
-  $errors[]="お問い合わせ項目を選択してください。";
- }
- if(empty($message)){
-  $errors[]="お問い合わせ内容が空白です。";
- }
- if(empty($name)){
+ if(empty($_SESSION["form_data"]["name"] )){
   $errors[]="名前が入力されていません。";
  }
- if(empty($furigana)){
+ if(empty($_SESSION["form_data"]["furigana"])){
   $errors[]="フリガナが入力されていません。";
  }
- if(empty($privacyPolicy)){
+ if (!filter_var($_SESSION["form_data"]["email"],FILTER_VALIDATE_EMAIL)){
+  $errors[]="メールアドレスが正しくありません。";
+ }
+ if(!preg_match("/^\d{10,11}$/",$_SESSION["form_data"]["tel"])){
+  $errors[]="電話番号は10桁または11桁で入力してください。";
+ }
+ if($_SESSION["form_data"]["inquiry"]=="選択してください"){
+  $errors[]="お問い合わせ項目を選択してください。";
+ }
+ if(empty($_SESSION["form_data"]["message"])){
+  $errors[]="お問い合わせ内容が空白です。";
+ }
+
+ if(empty($_SESSION["form_data"]["privacypolicy"])){
   $errors[]="個人情報保護方針にチェックが入っていません。";
  }
 
-
+ 
 if(empty($errors)){
-  
+
+
    if (isset($_SESSION["form_data"]["confirm"])) {
      header("Location:task8-2.php");
-     exit;
+     
+     
    } else {
 
-      if (!empty($name) && !empty($furigana) && !empty($email) && !empty($tel) && !empty($inquiry) && !empty($message) && !empty($privacyPolicy)) {
+    if (!empty($_SESSION["form_data"]["name"]) && !empty($_SESSION["form_data"]["furigana"]) && !empty($_SESSION["form_data"]["email"]) && !empty($_SESSION["form_data"]["tel"]) && !empty($_SESSION["form_data"]["inquiry"]) && !empty($_SESSION["form_data"]["message"]) && !empty($_SESSION["form_data"]["privacypolicy"])) {
        $_SESSION["form_data"]["confirm"] = true;
-       unset($_SESSION["form_data"]);
-       unset($_SESSION["form_errors"]);  
-      exit;
       }
    }
+   
+
 } else{
     $_SESSION["form_data"]["errors"] =$errors;
-    $_SESSION["form_data"]["name"] = $name;
-    $_SESSION["form_data"]["furigana"] = $furigana;
-    $_SESSION["form_data"]["email"] = $email;
-    $_SESSION["form_data"]["tel"] = $tel;
-    $_SESSION["form_data"]["inquiry"] = $inquiry;
-    $_SESSION["form_data"]["message"] = $message;
-    $_SESSION["form_data"]["privacyPolicy"] = $privacyPolicy;
+    $_SESSION["form_data"]["name"] = $_POST["name"];
+    $_SESSION["form_data"]["furigana"] = $_POST["furigana"];
+    $_SESSION["form_data"]["email"] = $_POST["email"];
+    $_SESSION["form_data"]["tel"] = $_POST["tel"];
+    $_SESSION["form_data"]["inquiry"] = $_POST["inquiry"];
+    $_SESSION["form_data"]["message"] = $_POST["message"];
+    $_SESSION["form_data"]["privacypolicy"] = $_POST["privacypolicy"];
     header("Location: task8-1.php");
     exit;
 }
@@ -106,9 +108,9 @@ if(empty($errors)){
       $tel = isset($_SESSION["form_data"]["tel"]) ? $_SESSION["form_data"]["tel"] : "";
       $inquiry = isset($_SESSION["form_data"]["inquiry"]) ? $_SESSION["form_data"]["inquiry"] : "";
       $message = isset($_SESSION["form_data"]["message"]) ? $_SESSION["form_data"]["message"] : "";
-      $privacyPolicyChecked = isset($_SESSION["form_data"]["privacyPolicy"]) ? "checked" : "";
+      $privacyPolicyChecked = isset($_SESSION["form_data"]["privacypolicy"]) ? "checked" : "";
       $errors = isset($_SESSION["form_data"]["errors"])?$_SESSION["form_data"]["errors"] : [];
-?>
+      ?>
     
 
     <?php if(!empty($errors)):?>
@@ -117,7 +119,10 @@ if(empty($errors)){
        <p><?php echo $error;?></p>
        <?php endforeach;?>
       </div>
-    <?php endif;?>  
+    <?php 
+    unset($_SESSION["form_data"]["errors"]);  
+    $errors =[];
+    endif;?>  
 
     <section class="contact-form-section">
       <h1>お問い合わせ</h1>
@@ -203,4 +208,3 @@ if(empty($errors)){
   </div>
 </body>
 </html>
-    
