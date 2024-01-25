@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TOPページ</title>
+  <title>お問い合わせページ</title>
   <link rel="stylesheet" href="../contact/reset.css">
   <link rel="stylesheet" href="../contact/stylesheet.css">
 </head>
 <body>
-  <div class="container">
+
+<div class="container">
   <header>
     <div class="logo">
       <h1>ここには会社名が入ります</h1>
     </div>
-    <nav>
+    <nav class="menu">
       <a href="#">ボタン01</a>
       <a href="#">ボタン02</a>
     </nav>
@@ -22,16 +23,19 @@
   <main>
     <section class="menu-section">
       <ul>
-        <li><a href="#">メニュー01</a></li>
+        <li><a href="\php">メニュー01</a></li>
         <li><a href="#">メニュー02</a></li>
         <li><a href="#">メニュー03</a></li>
       </ul>
       <img src="../contact/mv.png" alt="Main Visual">
     </section> 
 
-    <section class="kanryou">
-     <p>送信完了しました。</p>
-    </section>
+
+  
+    <div class="kanryou">
+  <p >送信完了しました。</p>
+  </div>
+    
 
     <section class="section05">
     <div class="sec05_wrapper">

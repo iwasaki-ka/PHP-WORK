@@ -242,10 +242,14 @@ footer p{
   margin-top: 15px;
 }
 
-.kanryou p {
+.kanryou {
   margin:100px;
   font-weight: bold;
   text-align: center;
+}
+
+.kanryou p {
+  color: blue;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px) {

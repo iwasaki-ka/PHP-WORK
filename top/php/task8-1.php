@@ -40,7 +40,7 @@ if(empty($errors)){
 
 
    if (isset($_SESSION["form_data"]["confirm"])) {
-     header("Location:task8-2.php");
+     header("Location:task9-1.php");
      
      
    } else {
@@ -126,7 +126,7 @@ if(empty($errors)){
 
     <section class="contact-form-section">
       <h1>お問い合わせ</h1>
-      <form action="<?php echo isset($_SESSION["form_data"]["confirm"]) ? 'task8-2.php' : 'task8-1.php'; ?>" method="post">
+      <form action="<?php echo isset($_SESSION["form_data"]["confirm"]) ? 'task9-1.php' : 'task8-1.php'; ?>" method="post">
         <div class="form-group">
             <label for="name">お名前</label>
             <input type="text" id="name" name="name"  value="<?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>">
