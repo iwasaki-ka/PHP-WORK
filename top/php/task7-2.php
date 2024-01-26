@@ -62,10 +62,9 @@ $staff3 = new Staff("鈴木 次郎", 27, "男性");
 $partStaff1 = new PartStaff("田中 友子",24,"女性","900");
 $staff4 = new Staff("中村 三郎", 27, "男性");
 
-$staff1->show(); 
-$staff2->show(); 
-$staff3->show(); 
-$partStaff1->show(); 
-$staff4->show();
+$staffs = [$staff1, $staff2, $staff3, $partStaff1, $staff4];
+foreach ($staffs as $staff) {
+    $staff->show();
+}
 
 ?>
